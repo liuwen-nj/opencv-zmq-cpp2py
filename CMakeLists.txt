@@ -10,5 +10,8 @@ set (CMAKE_BUILD_TYPE Debug)
 find_package (OpenCV REQUIRED)
 #find_package (OpenCV 3.0 REQUIRED)
 
+find_package(cppzmq)
+include_directories(${cppzmq_INCLUDE_DIR})
+
 add_executable(cvZmqPipeCpp src/main.cpp)
-target_link_libraries(cvZmqPipeCpp ${OpenCV_LIBS})
+target_link_libraries(cvZmqPipeCpp ${OpenCV_LIBS} ${cppzmq_LIBRARY})
