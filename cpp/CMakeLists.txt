@@ -1,4 +1,4 @@
-project(cvZmqPipe-cpp)
+project(cpp-python-cvmat-pipe)
 
 cmake_minimum_required(VERSION 3.0.2 FATAL_ERROR)
 
@@ -13,5 +13,5 @@ find_package (OpenCV REQUIRED)
 find_package(cppzmq)
 include_directories(${cppzmq_INCLUDE_DIR})
 
-add_executable(cvZmqPipeCpp src/main.cpp)
-target_link_libraries(cvZmqPipeCpp ${OpenCV_LIBS} ${cppzmq_LIBRARY})
+add_executable(pub src/pub.cpp)
+target_link_libraries(pub ${OpenCV_LIBS} ${cppzmq_LIBRARY})
